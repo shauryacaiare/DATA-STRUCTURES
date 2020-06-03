@@ -29,12 +29,14 @@ class linklist:
             actualnode = actualnode.nextnoder
         actualnode.nextnoder=newnode
     def insert_between(self,data,data1):
+        
         previousnode=self.headnode
 
         if previousnode is None:
             return
         while previousnode.data !=data:
             previousnode=previousnode.nextnoder
+        self.size+=1
         newnode=Node(data1)
         newnode.nextnoder=previousnode.nextnoder
         previousnode.nextnoder=newnode
