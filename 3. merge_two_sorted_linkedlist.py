@@ -65,6 +65,8 @@ class linkedlist:
             s.nextnode=p
         if p is None:
             s.nextnode=q
+        self.head=new_head
+        lk2.head=None
 
 lk1=linkedlist()
 lk1.insertstart(1)
@@ -86,19 +88,3 @@ lk2.traverse()
 lk1.mergelist(lk2)
 print("-"*100)
 lk1.traverse()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
