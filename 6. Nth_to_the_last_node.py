@@ -1,3 +1,6 @@
+""""in this code  if the linked list is 1->2->3->4->5 and value of n is 2 in the function than the output will be 4 as 4 is 2nd node
+       from the last node"""
+
 class Node:
     def __init__(self,data):
         self.data=data
