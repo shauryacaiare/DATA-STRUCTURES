@@ -6,23 +6,31 @@ class Linkedlist:
     def __init__(self):
         self.head=None
         self.size=0
-    def insertstart(self,data):
-        newnode=Node(data)
-        self.size+=1
+    def insertstart(self, data):
+        self.size += 1
+        cur_node = self.head
+        newnode = Node(data)
+        newnode.next = self.head
         if self.head is None:
-            self.head=newnode
-            newnode.next=self.head
+            newnode.next = newnode
         else:
-            newnode.next=self.head
-            self.head=newnode
-    def insertend(self,data):
-        self.size+=1
-        newnode=Node(data)
-        cur_node=self.head
-        while cur_node.next is not self.head:
-            cur_node=cur_node.next
-        cur_node.next=newnode
-        newnode.next=self.head
+            while cur_node.next is not self.head:
+                cur_node = cur_node.next
+            cur_node.next = newnode
+        self.head = newnode
+
+    def insertend(self, data):
+        self.size += 1
+        newnode = Node(data)
+        if self.head is None:
+            self.head = Node(data)
+            self.head.next = self.head
+        else:
+            curnode = self.head
+            while curnode.next is not self.head:
+                curnode = curnode.next
+            curnode.next = newnode
+            newnode.next = self.head
     def insert_between(self,data,data1):
         previousnode=self.head
 
